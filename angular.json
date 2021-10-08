@@ -1,6 +1,44 @@
 {
   "version": 1,
   "projects": {
+    "ngx-teleport": {
+      "projectType": "library",
+      "root": "libs/ngx-teleport",
+      "sourceRoot": "libs/ngx-teleport/src",
+      "prefix": "ngx-teleport",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/ngx-teleport"],
+          "options": {
+            "project": "libs/ngx-teleport/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ngx-teleport/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ngx-teleport/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ngx-teleport"],
+          "options": {
+            "jestConfig": "libs/ngx-teleport/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ngx-teleport/src/**/*.ts", "libs/ngx-teleport/src/**/*.html"]
+          }
+        }
+      }
+    },
     "portal-demo": {
       "projectType": "application",
       "root": "apps/portal-demo",
@@ -17,10 +55,7 @@
             "polyfills": "apps/portal-demo/src/polyfills.ts",
             "tsConfig": "apps/portal-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/portal-demo/src/favicon.ico",
-              "apps/portal-demo/src/assets"
-            ],
+            "assets": ["apps/portal-demo/src/favicon.ico", "apps/portal-demo/src/assets"],
             "styles": ["apps/portal-demo/src/styles.scss"],
             "scripts": []
           },
@@ -78,10 +113,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/portal-demo/src/**/*.ts",
-              "apps/portal-demo/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/portal-demo/src/**/*.ts", "apps/portal-demo/src/**/*.html"]
           }
         },
         "test": {

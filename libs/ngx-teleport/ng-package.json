@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "allowedNonPeerDependencies": ["@angular/cdk"],
+  "dest": "../../dist/libs/ngx-teleport",
+  "lib": {
+    "entryFile": "src/index.ts"
+  }
+}

@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "ngx-teleport": {
+      "tags": []
+    },
     "portal-demo": {
       "tags": []
     },

@@ -1,0 +1,85 @@
+<ngx-portal to="hero">
+  <div class="relative bg-gray-50">
+    <main class="lg:relative">
+      <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
+        <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+            <span class="block xl:inline">Teleport Content</span>
+            <span class="block text-indigo-600 xl:inline"> Anywhere in your Angular App</span>
+          </h1>
+
+          <pre class="scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal rounded-md">
+              <code class="inline-block p-4 rounded-xl subpixel-antialiased"
+                [highlight]="code"
+              >
+              </code>
+            </pre>
+          <div class="mt-4 sm:flex sm:justify-center lg:justify-between gap-2">
+            <div class="rounded-md shadow">
+              <a
+                href="#"
+                class="
+                  w-full
+                  flex
+                  items-center
+                  justify-center
+                  px-8
+                  py-3
+                  border border-transparent
+                  text-base
+                  font-medium
+                  rounded-xl
+                  text-white
+                  bg-indigo-600
+                  hover:bg-indigo-700
+                  md:py-4 md:text-lg md:px-10
+                "
+              >
+                Get started
+              </a>
+            </div>
+
+            <button
+              type="button"
+              [cdkCopyToClipboard]="'npm install ngx-teleport'"
+              class="
+                w-full
+                sm:w-auto
+                flex-none
+                bg-gray-50
+                text-gray-400
+                hover:text-gray-900
+                font-mono
+                leading-6
+                py-3
+                sm:px-6
+                border border-gray-200
+                rounded-xl
+                flex
+                items-center
+                justify-center
+                space-x-2
+                sm:space-x-4
+                focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none
+                transition-colors
+                duration-200
+              "
+            >
+              <span class="text-gray-900"
+                ><span class="hidden sm:inline text-gray-500" aria-hidden="true">$ </span>npm install ngx-teleport</span
+              ><span class="sr-only">(click to copy to clipboard)</span
+              ><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M8 16c0 1.886 0 2.828.586 3.414C9.172 20 10.114 20 12 20h4c1.886 0 2.828 0 3.414-.586C20 18.828 20 17.886 20 16v-4c0-1.886 0-2.828-.586-3.414C18.828 8 17.886 8 16 8m-8 8h4c1.886 0 2.828 0 3.414-.586C16 14.828 16 13.886 16 12V8m-8 8c-1.886 0-2.828 0-3.414-.586C4 14.828 4 13.886 4 12V8c0-1.886 0-2.828.586-3.414C5.172 4 6.114 4 8 4h4c1.886 0 2.828 0 3.414.586C16 5.172 16 6.114 16 8"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+        <img class="absolute inset-0 w-5/6 h-5/6" src="assets/hero-portal.svg" alt="" />
+      </div>
+    </main>
+  </div>
+</ngx-portal>

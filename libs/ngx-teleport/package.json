@@ -2,6 +2,18 @@
   "name": "ngx-teleport",
   "version": "0.0.1",
   "license": "MIT",
+  "description": "A portal component to teleport content to another location in  angular",
+  "keywords": [
+    "portal",
+    "angular portal",
+    "angular portal component",
+    "angular teleport",
+    "ng-portal",
+    "template portal",
+    "ngx-portal",
+    "teleport angular content",
+    "angular dynamic portal"
+  ],
   "author": {
     "email": "nivrithgomatam@gmail.com",
     "name": "Nivrith"

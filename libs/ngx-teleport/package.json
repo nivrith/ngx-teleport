@@ -1,6 +1,6 @@
 {
   "name": "ngx-teleport",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "license": "MIT",
   "description": "A portal component to teleport content to another location in  angular",
   "keywords": [

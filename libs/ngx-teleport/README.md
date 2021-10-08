@@ -20,10 +20,10 @@ yarn add ngx-teleport
 
 ```html
 <!--This can be anwhere in your App-->
-<ngx-portal to="destination"> <stuff>...</stuff></ngx-portal>
+<ngx-teleport to="destination"> <stuff>...</stuff></ngx-teleport>
 
 <!--This can be anwhere in your App-->
-<ngx-portal-outlet name="destination"> </ngx-portal-outlet>
+<ngx-teleport-outlet name="destination"> </ngx-teleport-outlet>
 <!--content will be rendered here-->
 <stuff>...</stuff>
 ```

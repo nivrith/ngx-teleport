@@ -4,20 +4,18 @@ import {
   Input,
   ViewChild,
   TemplateRef,
-  ComponentFactoryResolver,
-  AfterViewInit,
   ElementRef,
-  SkipSelf,
+  AfterViewInit,
 } from '@angular/core';
-import { NgxPortalService } from '../ngx-portal.service';
+import { NgxPortalService as NgxTeleportService } from '../ngx-teleport.service';
 
 @Component({
-  selector: 'ngx-portal',
-  templateUrl: './portal.component.html',
-  styleUrls: [ './portal.component.scss' ],
+  selector: 'ngx-teleport',
+  templateUrl: './teleport.component.html',
+  styleUrls: [ './teleport.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PortalComponent {
+export class TeleportComponent implements AfterViewInit {
   @Input() to: string | null = null;
 
   @ViewChild('portal') portalTemplateRef: TemplateRef<any> | null = null;
@@ -25,9 +23,8 @@ export class PortalComponent {
   private from = this.parentElementRef.nativeElement?.parentElement?.tagName.toLowerCase();
 
   constructor (
-    private portalService: NgxPortalService,
+    private portalService: NgxTeleportService,
     private parentElementRef: ElementRef<HTMLElement>,
-    @SkipSelf() private componentRef: ComponentFactoryResolver,
   ) { }
 
   ngAfterViewInit() {

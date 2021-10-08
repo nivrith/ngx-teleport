@@ -1,5 +1,5 @@
-<ngx-portal to="hero">
-  <div class="mt-8 relative bg-white">
+<ngx-teleport to="hero">
+  <div class="relative bg-white">
     <main class="lg:relative">
       <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
         <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
@@ -14,7 +14,7 @@
               >
               </code>
             </pre>
-          <div class="mt-4 sm:flex sm:justify-center lg:justify-between gap-2">
+          <div class="sm:flex sm:justify-center lg:justify-between gap-2">
             <button
               type="button"
               [cdkCopyToClipboard]="'npm install ngx-teleport'"
@@ -38,6 +38,7 @@
                 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-300 focus:outline-none
                 transition-colors
                 duration-200
+                shadow
               "
             >
               <span class="text-gray-100"
@@ -49,7 +50,7 @@
                 ></path>
               </svg>
             </button>
-            <div class="rounded-xl shadow">
+            <div class="mt-4 sm:mt-0 rounded-xl shadow">
               <a
                 href="https://github.com/nivrith/ngx-teleport"
                 target="__blank"
@@ -91,8 +92,8 @@
         </div>
       </div>
       <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-        <img class="absolute inset-0 w-5/6 h-5/6" src="assets/hero-portal.svg" alt="" />
+        <img class="absolute m-auto inset-0 w-5/6 h-5/6" src="assets/hero-portal.svg" alt="" />
       </div>
     </main>
   </div>
-</ngx-portal>
+</ngx-teleport>

@@ -1,4 +1,4 @@
 
-export * from './portal.component';
+export * from './teleport.component';
 
 

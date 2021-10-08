@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortalComponent } from './components/portal.component';
+import { TeleportComponent } from './components/teleport.component';
 import { PortalModule } from '@angular/cdk/portal';
-import { NgxPortalOutlet as NgxPortalOutlet } from './portal-outlet.directive';
+import { NgxTeleportOutlet as NgxTeleportOutlet } from './teleport-outlet.directive';
 
 @NgModule({
-  declarations: [ PortalComponent, NgxPortalOutlet ],
+  declarations: [ TeleportComponent, NgxTeleportOutlet ],
   imports: [ CommonModule, PortalModule ],
-  exports: [ PortalComponent, NgxPortalOutlet ],
+  exports: [ TeleportComponent, NgxTeleportOutlet ],
 })
 export class NgxTeleportModule { }

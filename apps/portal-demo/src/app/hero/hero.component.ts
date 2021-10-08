@@ -10,13 +10,13 @@ export class HeroComponent implements OnInit {
 
   code = `
 <!--This can be anwhere in your App-->
-<ngx-portal to="destination">
+<ngx-teleport to="destination">
   <stuff>...</stuff>
-</ngx-portal>
+</ngx-teleport>
 
 <!--This can be anwhere in your App-->
-<ngx-portal-outlet name="destination">
-</ngx-portal-outlet>
+<ngx-teleport-outlet name="destination">
+</ngx-teleport-outlet>
 <!--content will be rendered here-->
 <stuff>...</stuff>
 `

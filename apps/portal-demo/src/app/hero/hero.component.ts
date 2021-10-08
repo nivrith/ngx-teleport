@@ -11,7 +11,8 @@ export class HeroComponent implements OnInit {
   code = `
 <!--This can be anwhere in your App-->
 <ngx-portal to="destination">
-  <stuff>...</stuff></ngx-portal>
+  <stuff>...</stuff>
+</ngx-portal>
 
 <!--This can be anwhere in your App-->
 <ngx-portal-outlet name="destination">

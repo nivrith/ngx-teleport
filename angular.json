@@ -49,7 +49,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/portal-demo",
+            "outputPath": "docs",
             "index": "apps/portal-demo/src/index.html",
             "main": "apps/portal-demo/src/main.ts",
             "polyfills": "apps/portal-demo/src/polyfills.ts",
@@ -65,7 +65,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",

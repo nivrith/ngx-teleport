@@ -6,7 +6,8 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
-    "build": "nx build",
+    "build": "nx build ngx-teleport --prod --skip-nx-cache",
+    "postbuild": "npx copyfiles ./*.svg dist/libs/ngx-teleport/ && npx copyfiles ./README.md dist/libs/ngx-teleport/",
     "test": "nx test"
   },
   "private": true,

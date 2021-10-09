@@ -7,7 +7,6 @@
   "angularCompilerOptions": {
     // "compilationMode": "partial",
     // "enableIvy": true
-    "compilationMode": "full",
     "enableIvy": false
   }
 }

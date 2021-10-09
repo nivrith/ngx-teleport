@@ -1,4 +1,0 @@
-
-export * from './teleport.component';
-
-

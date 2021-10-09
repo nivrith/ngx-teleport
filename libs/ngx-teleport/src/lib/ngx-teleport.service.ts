@@ -40,9 +40,12 @@ export class NgxPortalService {
     }
   }
 
-  unregisterOutlet(key: string) {
+  detach(key: string) {
     const portalOutlet = this.teleportOutletRegistry.get(key);
     portalOutlet?.detach();
+  }
+
+  unregisterOutlet(key: string) {
     this.teleportOutletRegistry.delete(key);
   }
 }

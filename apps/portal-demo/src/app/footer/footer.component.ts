@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
 
+  year = (new Date()).getFullYear();
 
   constructor () { }
 

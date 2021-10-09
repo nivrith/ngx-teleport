@@ -27,3 +27,19 @@ yarn add ngx-teleport
 <!--content will be rendered here-->
 <stuff>...</stuff>
 ```
+
+- Just Import `NgxTeleportModule` in the NgModule of which ever components you are using `ngx-teleport` and `ngx-teleport-outlet` in
+
+```ts
+import { NgxTeleportModule } from 'ngx-teleport';
+
+@NgModule({
+  //...
+  imports: [
+    //..
+    NgxTeleportModule,
+    //..
+  ],
+})
+export class SomeModule {}
+```

@@ -6,6 +6,9 @@ import {
   TemplateRef,
   ElementRef,
   AfterViewInit,
+  OnDestroy,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { NgxPortalService as NgxTeleportService } from '../ngx-teleport.service';
 
@@ -15,7 +18,7 @@ import { NgxPortalService as NgxTeleportService } from '../ngx-teleport.service'
   styleUrls: [ './teleport.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TeleportComponent implements AfterViewInit {
+export class TeleportComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() to: string | null = null;
 
   @ViewChild('portal') portalTemplateRef: TemplateRef<any> | null = null;
@@ -27,9 +30,25 @@ export class TeleportComponent implements AfterViewInit {
     private parentElementRef: ElementRef<HTMLElement>,
   ) { }
 
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (!changes.to.isFirstChange() && changes.to && changes.to.currentValue !== changes.to.previousValue) {
+      if (changes.to.currentValue && this.portalTemplateRef) {
+        this.portalService.teleport(this.portalTemplateRef, changes.to.currentValue)
+      }
+    }
+  }
+
   ngAfterViewInit() {
     if (this.to && this.portalTemplateRef) {
       this.portalService.teleport(this.portalTemplateRef, this.to, this.from);
     }
   }
+
+  ngOnDestroy() {
+    if (this.to) {
+      this.portalService.detach(this.to)
+    }
+  }
+
 }

@@ -3,8 +3,9 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 /* eslint-disable @angular-eslint/directive-selector */
 /* eslint-disable @angular-eslint/no-inputs-metadata-property */
-import { AfterViewInit, Directive, EmbeddedViewRef, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Directive, EmbeddedViewRef, Input, OnDestroy, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { NgxPortalService as NgxTeleportService } from './ngx-teleport.service';
+import { Component } from '@angular/core';
 
 /**
  * NgxPortalOutlet. To dynamically teleport content declaratively
@@ -30,19 +31,26 @@ import { NgxPortalService as NgxTeleportService } from './ngx-teleport.service';
 
  * ```
  */
-@Directive({
+@Component({
 
   selector: 'ngx-teleport-outlet',
   exportAs: 'ngxPortalOutlet',
   inputs: [ 'portal: ngxPortalOutlet' ],
+  template: `<ng-template #teleportTarget></ng-template>`
 })
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
+// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class NgxTeleportOutlet implements AfterViewInit, OnDestroy {
 
   private attached: EmbeddedViewRef<any> | null = null
 
   @Input()
   name = '';
+
+  @Input()
+  append = true;
+
+  @ViewChild('teleportTarget', { read: ViewContainerRef }) private teleportTarget: ViewContainerRef | null = null;
 
   constructor (
     private viewContainerRef: ViewContainerRef,
@@ -53,7 +61,10 @@ export class NgxTeleportOutlet implements AfterViewInit, OnDestroy {
 
   attach(templateRef: TemplateRef<any>) {
     this.detach();
-    this.attached = this.viewContainerRef.createEmbeddedView(templateRef);
+
+    const viewContainerRef = this.append ? this.viewContainerRef : this.teleportTarget ?? this.viewContainerRef;
+
+    this.attached = viewContainerRef.createEmbeddedView(templateRef);
     return this.attached;
   }
 

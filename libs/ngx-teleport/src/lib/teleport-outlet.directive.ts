@@ -62,7 +62,7 @@ export class NgxTeleportOutlet implements AfterViewInit, OnDestroy {
   }
 
   detach() {
-    this.attached?.detach()
+    this.attached?.destroy();
   }
 
   ngAfterViewInit() {

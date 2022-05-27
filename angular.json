@@ -27,7 +27,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/ngx-teleport"],
           "options": {
-            "jestConfig": "libs/ngx-teleport/jest.config.js",
+            "jestConfig": "libs/ngx-teleport/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -37,7 +37,8 @@
             "lintFilePatterns": ["libs/ngx-teleport/src/**/*.ts", "libs/ngx-teleport/src/**/*.html"]
           }
         }
-      }
+      },
+      "tags": []
     },
     "portal-demo": {
       "projectType": "application",
@@ -51,6 +52,7 @@
           "options": {
             "outputPath": "docs",
             "index": "apps/portal-demo/src/index.html",
+            "baseHref": "/ngx-teleport/docs/",
             "main": "apps/portal-demo/src/main.ts",
             "polyfills": "apps/portal-demo/src/polyfills.ts",
             "tsConfig": "apps/portal-demo/tsconfig.app.json",
@@ -120,11 +122,12 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/portal-demo"],
           "options": {
-            "jestConfig": "apps/portal-demo/jest.config.js",
+            "jestConfig": "apps/portal-demo/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "portal-demo-e2e": {
       "root": "apps/portal-demo-e2e",
@@ -151,39 +154,9 @@
             "lintFilePatterns": ["apps/portal-demo-e2e/**/*.{js,ts}"]
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
       },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+      "tags": [],
+      "implicitDependencies": ["portal-demo"]
     }
-  },
-  "defaultProject": "portal-demo"
+  }
 }
